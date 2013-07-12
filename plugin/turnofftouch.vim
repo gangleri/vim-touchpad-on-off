@@ -15,3 +15,5 @@ endfunction
 command! ToggleTouch
       \ call ToggleTouchPad()
 
+noremap <leader>ttp :ToggleTouch<cr>
+
