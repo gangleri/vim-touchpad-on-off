@@ -1,4 +1,4 @@
 vim-touchad-on-off
 ==================
 
-Commands to turn touch pad off from within vim
+A simple VIM plugin that I wrote to allow me to quickly turn the touch pad off and on while working on a laptop.
