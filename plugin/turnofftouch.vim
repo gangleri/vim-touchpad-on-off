@@ -2,7 +2,7 @@
 
 function! ToggleTouchPad()
 	let state = 1 - system('synclient -l | grep --color=never -oP "TouchpadOff.+\K(\d)"')
-	echo system("synclient TouchadOff=".state)
+	echo system("synclient TouchpadOff=".state)
 endfunction
 
 command! ToggleTouch
