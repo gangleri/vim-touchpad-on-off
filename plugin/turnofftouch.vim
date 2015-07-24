@@ -1,16 +1,9 @@
+" Turn the touchpad on/off
 
-let s:TouchPadEnabled=1
 function! ToggleTouchPad()
-  if(s:TouchPadEnabled == 1)
-    let s:TouchPadEnabled=0
-  else
-    let s:TouchPadEnabled=1
-  endif
-  let id=substitute(system("xinput list | ack '.+Trackpad.+id=(\\d+)' --output '$1'"), "\n", "", "")
-  execute ":silent !xinput set-prop ".id." 'Device Enabled' ".s:TouchPadEnabled
-  execute ":redraw!"
+	let state = 1 - system('synclient -l | grep --color=never -oP "TouchpadOff.+\K(\d)"')
+	echo system("synclient TouchadOff=".state)
 endfunction
-
 
 command! ToggleTouch
       \ call ToggleTouchPad()
